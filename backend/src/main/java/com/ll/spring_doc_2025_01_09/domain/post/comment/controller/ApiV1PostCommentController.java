@@ -29,6 +29,7 @@ public class ApiV1PostCommentController {
     private final PostService postService;
     private final Rq rq;
 
+
     @GetMapping
     @Transactional(readOnly = true)
     @Operation(summary = "다건조회")
@@ -45,6 +46,7 @@ public class ApiV1PostCommentController {
                 .map(PostCommentDto::new)
                 .toList();
     }
+
 
     @DeleteMapping("/{id}")
     @Transactional
