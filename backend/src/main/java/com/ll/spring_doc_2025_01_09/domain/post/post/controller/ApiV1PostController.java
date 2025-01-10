@@ -9,6 +9,8 @@ import com.ll.spring_doc_2025_01_09.global.exceptions.ServiceException;
 import com.ll.spring_doc_2025_01_09.global.rq.Rq;
 import com.ll.spring_doc_2025_01_09.global.rsData.RsData;
 import com.ll.spring_doc_2025_01_09.standard.page.dto.PageDto;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.validator.constraints.Length;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1/posts")
 @RequiredArgsConstructor
+@Tag(name = "ApiV1PostController", description = "API 글 컨트롤러")
 public class ApiV1PostController {
     private final PostService postService;
     private final Rq rq;
@@ -33,6 +36,7 @@ public class ApiV1PostController {
 
     @GetMapping("/statistics")
     @Transactional(readOnly = true)
+    @Operation(summary = "통계정보")
     public PostStatisticsResBody statistics() {
         Member actor = rq.getActor();
 
@@ -44,6 +48,7 @@ public class ApiV1PostController {
 
     @GetMapping("/mine")
     @Transactional(readOnly = true)
+    @Operation(summary = "내글 다건 조회")
     public PageDto<PostDto> mine(
             @RequestParam(defaultValue = "title") String searchKeywordType,
             @RequestParam(defaultValue = "") String searchKeyword,
@@ -60,6 +65,7 @@ public class ApiV1PostController {
 
     @GetMapping
     @Transactional(readOnly = true)
+    @Operation(summary = "공개글 다건 조회")
     public PageDto<PostDto> items(
             @RequestParam(defaultValue = "title") String searchKeywordType,
             @RequestParam(defaultValue = "") String searchKeyword,
@@ -74,6 +80,7 @@ public class ApiV1PostController {
 
     @GetMapping("/{id}")
     @Transactional(readOnly = true)
+    @Operation(summary = "단건 조회", description = "비밀글은 작성자만 조회 가능")
     public PostWithContentDto item(@PathVariable long id) {
         Post post = postService.findById(id).get();
 
@@ -140,6 +147,7 @@ public class ApiV1PostController {
 
     @PutMapping("/{id}")
     @Transactional
+    @Operation(summary = "글 수정")
     public RsData<PostWithContentDto> modify(
             @PathVariable long id,
             @RequestBody @Valid PostModifyReqBody reqBody
@@ -164,6 +172,7 @@ public class ApiV1PostController {
 
     @DeleteMapping("/{id}")
     @Transactional
+    @Operation(summary = "글 삭제", description = "작성자 본인 뿐 아니라 관리자도 삭제 가능")
     public RsData<Void> delete(
             @PathVariable long id
     ) {
