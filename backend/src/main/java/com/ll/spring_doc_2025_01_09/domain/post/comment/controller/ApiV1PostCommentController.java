@@ -8,6 +8,8 @@ import com.ll.spring_doc_2025_01_09.domain.post.post.service.PostService;
 import com.ll.spring_doc_2025_01_09.global.exceptions.ServiceException;
 import com.ll.spring_doc_2025_01_09.global.rq.Rq;
 import com.ll.spring_doc_2025_01_09.global.rsData.RsData;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.validator.constraints.Length;
@@ -20,12 +22,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/posts/{postId}/comments")
 @RequiredArgsConstructor
+@Tag(name = "ApiV1PostCommentController", description = "API 댓글 컨트롤러")
 public class ApiV1PostCommentController {
     private final PostService postService;
     private final Rq rq;
 
     @GetMapping
     @Transactional(readOnly = true)
+    @Operation(summary = "다건조회")
     public List<PostCommentDto> items(
             @PathVariable long postId
     ) {
@@ -42,6 +46,7 @@ public class ApiV1PostCommentController {
 
     @DeleteMapping("/{id}")
     @Transactional
+    @Operation(summary = "삭제")
     public RsData<Void> delete(
             @PathVariable long postId,
             @PathVariable long id
@@ -76,6 +81,7 @@ public class ApiV1PostCommentController {
 
     @PutMapping("/{id}")
     @Transactional
+    @Operation(summary = "수정")
     public RsData<PostCommentDto> modify(
             @PathVariable long postId,
             @PathVariable long id,
@@ -112,6 +118,7 @@ public class ApiV1PostCommentController {
 
     @PostMapping
     @Transactional
+    @Operation(summary = "작성")
     public RsData<PostCommentDto> write(
             @PathVariable long postId,
             @RequestBody @Valid PostCommentWriteReqBody reqBody
