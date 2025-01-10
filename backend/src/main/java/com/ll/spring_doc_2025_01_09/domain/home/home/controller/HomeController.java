@@ -6,8 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Tag(name = "HomeController", description = "홈 컨트롤러")
 @Controller
+@Tag(name = "HomeController", description = "홈 컨트롤러")
 public class HomeController {
     @GetMapping(value = "/", produces = "text/html;charset=utf-8")
     @ResponseBody
