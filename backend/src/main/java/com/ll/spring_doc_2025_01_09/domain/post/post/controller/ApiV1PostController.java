@@ -112,7 +112,7 @@ public class ApiV1PostController {
 
     @PostMapping
     @Transactional
-    @Operation(summary = "글 작성")
+    @Operation(summary = "작성")
     public RsData<PostWithContentDto> write(
             @RequestBody @Valid PostWriteReqBody reqBody
     ) {
@@ -148,7 +148,7 @@ public class ApiV1PostController {
 
     @PutMapping("/{id}")
     @Transactional
-    @Operation(summary = "글 수정")
+    @Operation(summary = "수정")
     public RsData<PostWithContentDto> modify(
             @PathVariable long id,
             @RequestBody @Valid PostModifyReqBody reqBody
@@ -173,7 +173,7 @@ public class ApiV1PostController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    @Operation(summary = "글 삭제", description = "작성자 본인 뿐 아니라 관리자도 삭제 가능")
+    @Operation(summary = "삭제", description = "작성자 본인 뿐 아니라 관리자도 삭제 가능")
     public RsData<Void> delete(
             @PathVariable long id
     ) {
