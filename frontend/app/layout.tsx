@@ -27,14 +27,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex flex-col antialiased min-h-[100dvh] border-[5px]`}
       >
-        <header>
-          <a href="">홈</a>
-          <a href="/about">소개</a>
+        <header className="border-[2px] border-[red] p-5">
+          <div className="flex gap-2">
+            <a href="/">홈</a>
+            <a href="/about">소개</a>
+          </div>
         </header>
 
-        <main className="flex-grow border-[2px] border-[blue]">{children}</main>
+        <main className="flex-grow p-5 border-[2px] border-[blue]">
+          {children}
+        </main>
 
-        <footer className="border-[2px] border-[pink]">Copyrigth 2025.</footer>
+        <footer className="p-5 border-[2px] border-[pink]">
+          Copyrigth 2025.
+        </footer>
       </body>
     </html>
   );
