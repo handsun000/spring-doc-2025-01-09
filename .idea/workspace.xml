@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ee2f90ab-1d50-432b-aea0-693626ea05d0" name="변경" comment="work">
+      <change beforePath="$PROJECT_DIR$/apiV1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/lib/backend/apiV1/schema.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema.d.ts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/son/project/springboot/spring-doc-2025-01-09/backend",
+    "애플리케이션.SpringDoc20250109Application.executor": "Run"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="SpringDoc20250109Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ll.spring_doc_2025_01_09.SpringDoc20250109Application" />
+      <module name="com.ll.spring-doc-2025-01-09.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ll.spring_doc_2025_01_09.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="애플리케이션.SpringDoc20250109Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="work">
+      <option name="closed" value="true" />
+      <created>1736490074001</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736490074001</updated>
+    </task>
+    <task id="LOCAL-00002" summary="work">
+      <option name="closed" value="true" />
+      <created>1736490157154</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736490157154</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="work" />
+    <option name="LAST_COMMIT_MESSAGE" value="work" />
+  </component>
+</project>
